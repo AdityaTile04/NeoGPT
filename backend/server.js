@@ -14,6 +14,5 @@ app.use("/api", chatRoute);
 app.use(cors());
 
 app.listen(PORT, () => {
-  console.log(`Server running on port: ${PORT}`);
-  dbConnection();
+  console.log(`Server running on port ${PORT}`);
 });
