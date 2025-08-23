@@ -1,41 +1,22 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "@google/genai": "^1.10.0",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.0",
-    "express": "^5.1.0",
-    "openai": "^5.10.1"
-  },
   "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-=======
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> 4e7071c (Creates the thread schema)
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-<<<<<<< HEAD
-  "type": "module"
-=======
-  "type": "module",
   "dependencies": {
     "@google/genai": "^1.13.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "mongoose": "^8.17.2"
+    "mongoose": "^8.17.2",
+    "openai": "^5.10.1"
   }
->>>>>>> 4e7071c (Creates the thread schema)
 }

@@ -27,8 +27,12 @@ export const geminiResponse = async (message) => {
       options
     );
     const data = await response.json();
-    res.json(data);
+    const reply =
+      data?.candidates?.[0]?.content?.parts?.[0]?.text || "No reply";
+
+    return reply;
   } catch (err) {
-    console.log(err);
+    console.error("Gemini API Error:", err);
+    return "Sorry, something went wrong with Gemini.";
   }
 };
