@@ -7,7 +7,7 @@ const App = () => {
   const providerValues = {};
 
   return (
-    <div className="main">
+    <div className="app">
       <Context.Provider value={providerValues}>
         <Sidebar></Sidebar>
         <ChatWindow></ChatWindow>

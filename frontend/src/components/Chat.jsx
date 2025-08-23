@@ -1,4 +1,4 @@
-import "../css/Chat.css";
+import "../css/App.css";
 
 const Chat = () => {
   return <div>Chat</div>;

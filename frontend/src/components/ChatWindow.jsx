@@ -15,10 +15,13 @@ const ChatWindow = () => {
         </div>
       </div>
       <Chat></Chat>
+
       <div className="chatInput">
-        <div className="userInput">
-          <input type="text" placeholder="Ask anything"></input>
-          <i class="fa-solid fa-paper-plane"></i>
+        <div className="inputBox">
+          <input type="text" placeholder="Ask anything" />
+          <div id="submit">
+            <i className="fa-solid fa-paper-plane"></i>
+          </div>
         </div>
         <p className="info">
           NeoGPT can make mistakes. Check important info. See Cookie
