@@ -2,9 +2,22 @@ import "./css/App.css";
 import ChatWindow from "./components/ChatWindow";
 import Sidebar from "./components/Sidebar";
 import { Context } from "./context/Context";
+import { useState } from "react";
+import { v1 as uuidv1 } from "uuid";
 
 const App = () => {
-  const providerValues = {};
+  const [prompt, setPrompt] = useState("");
+  const [reply, setReply] = useState(null);
+  const [currThreadId, setCurrThreadId] = useState(uuidv1());
+
+  const providerValues = {
+    prompt,
+    setPrompt,
+    reply,
+    setReply,
+    currThreadId,
+    setCurrThreadId,
+  };
 
   return (
     <div className="app">
