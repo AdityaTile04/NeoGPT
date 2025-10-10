@@ -1,12 +1,19 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import "../css/ChatWindow.css";
 import Chat from "./Chat";
 import { Context } from "../context/Context";
 import { ScaleLoader } from "react-spinners";
 
 const ChatWindow = () => {
-  const { prompt, setPrompt, reply, setReply, currThreadId } =
-    useContext(Context);
+  const {
+    prompt,
+    setPrompt,
+    reply,
+    setReply,
+    currThreadId,
+    prevChats,
+    setPrevChats,
+  } = useContext(Context);
 
   const [loading, setLoading] = useState(false);
 
@@ -34,6 +41,24 @@ const ChatWindow = () => {
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (prompt && reply) {
+      setPrevChats((prevChats) => [
+        ...prevChats,
+        {
+          role: "user",
+          content: prompt,
+        },
+        {
+          role: "assistant",
+          content: reply,
+        },
+      ]);
+    }
+
+    setPrompt("");
+  }, [reply]);
 
   return (
     <div className="chatWindow">

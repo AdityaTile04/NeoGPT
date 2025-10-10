@@ -1,7 +1,29 @@
-import "../css/App.css";
+import "../css/Chat.css";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
 const Chat = () => {
-  return <div>Chat</div>;
+  const { newChat, prevChats } = useContext(Context);
+
+  return (
+    <>
+      {newChat && <h1>Start a new Chat!</h1>}
+      <div className="chats">
+        {prevChats?.map((chat, idx) => (
+          <div
+            className={chat.role === "user" ? "userDiv" : "gptDiv"}
+            key={idx}
+          >
+            {chat.role === "user" ? (
+              <p className="userMessage">{chat.content}</p>
+            ) : (
+              <p className="gptMessage">{chat.content}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default Chat;
