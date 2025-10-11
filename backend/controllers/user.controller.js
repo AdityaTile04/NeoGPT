@@ -46,3 +46,8 @@ export const login = async (req, res) => {
     console.log(err);
   }
 };
+
+export const logout = (req, res) => {
+  res.clearCookies();
+  res.status(200).json({ message: "Logout successfull" });
+};
