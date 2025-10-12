@@ -109,6 +109,10 @@ input:focus {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.dropDown i {
+  padding-right: 10px;
+}
+
 .dropDownItem {
   font-size: 0.9rem;
   margin: 0.3rem 0rem;
