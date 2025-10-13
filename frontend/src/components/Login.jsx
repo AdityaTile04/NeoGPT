@@ -1,9 +1,11 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [form, setForm] = useState({ email: "", password: "" });
+
+  const loginUser = fetch('http"//localhost:3000/api/auth/login');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
